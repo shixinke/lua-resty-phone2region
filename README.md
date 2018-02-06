@@ -1,4 +1,4 @@
-# lua-resty-iplocation
+# lua-resty-phone2region
 
 根据手机号查询所在区域的工具函数(手机数据来源于[https://github.com/lovedboy/phone](https://github.com/lovedboy/phone))
 
