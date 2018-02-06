@@ -62,19 +62,19 @@
 
 用法:phone2region_obj, err = phone2region:new({file = 'the/path/to/the/data/file', dict = 'shared dict name'})
 
-功能：初始化iplocation模块
+功能：初始化phone2region模块
 
 参数：是一个table，里面有两个元素
      
    file：数据文件所在路径
 
-   dict:共享字典的名称(默认为ip_data，注：字典的大小建议为5m，因为文件存到内存中所占内存大约为4多M),
+   dict:共享字典的名称(默认为phone_data，注：字典的大小建议为5m，因为文件存到内存中所占内存大约为4多M),
    
    mode:查询方式(支持内存(memory)查找,文件(binary))
 
 ## search
 
-用法:ip_tab,err = phone2region_obj:search(ip, multi)
+用法:phone_tab,err = phone2region_obj:search(phone, multi)
 
 功能：通过手机号查询其所在区域(根据初始中的mode来判断它是采用内存查找还是文件查找)
 
@@ -113,7 +113,7 @@
 
 ## memory_search
 
-用法:ip_tab,err = phone2region_obj:memory_search(ip)
+用法:phone_tab,err = phone2region_obj:memory_search(phone)
 
 功能：通过从内存数据中查找数据(如果没有对应的字典，则从数据文件中查找)
 
@@ -126,7 +126,7 @@
 
 ## bin_search
 
-用法:ip_tab,err = phone2region_obj:bin_search(ip)
+用法:phone_tab,err = phone2region_obj:bin_search(phone)
 
 功能：通过二进制文件查找
 
