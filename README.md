@@ -70,9 +70,9 @@
 
    dict:共享字典的名称(默认为phone_data，注：字典的大小建议为5m，因为文件存到内存中所占内存大约为4多M),
    
-   root:文件根目录
-   
    mode:查询方式(支持内存(memory)查找,文件(binary))
+   
+   root:文件根目录
 
 ## search
 
