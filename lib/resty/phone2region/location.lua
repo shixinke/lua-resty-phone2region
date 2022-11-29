@@ -189,7 +189,7 @@ function _M.memory_search(self, phone)
     if ptr == 0 then
         return nil, 'not found'
     end
-    local row = str_match(self.content, '[^\\0]+', ptr)
+    local row = str_match(self.content, '[^\\0]+', ptr + 1)
     return format_region(row, isp)
 end
 
