@@ -82,6 +82,14 @@ local function check_phone(phone)
     return true
 end
 
+local function remove_zero(wndtext)
+    s = '';
+    for name in string.gmatch(wndtext,"[^%z]") do
+        s = s..name;
+    end
+    return s
+end
+
 local function format_region(str, isp)
     if is_empty_string(str) then
         return nil, 'not found'
@@ -91,7 +99,7 @@ local function format_region(str, isp)
     str_gsub(str,'[^|]+',function ( field )
         arr[#arr + 1] = field
     end)
-    info.province = arr[1] or ''
+    info.province = remove_zero(arr[1] or '') -- 省份字段存在0字符，在与其他语言交互时可能出现问题
     info.city = arr[2] or ''
     info.zipcode = arr[3] or ''
     info.telephone_prefix = arr[4] or ''
